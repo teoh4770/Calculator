@@ -1,26 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Calculator app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Calculator app</title>
+  </head>
+  <body>
+    <section class="calculator">
+      <div class="container">
+        <div class="wrapper top-bar">
+          <p class="logo">calc</p>
+        </div>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+        <div class="wrapper screen">
+          <p class="result">1234</p>
+        </div>
+        <div class="wrapper number-grid">
+          <button class="number" value="7"><span>7</span></button>
+          <button class="number" value="8"><span>8</span></button>
+          <button class="number" value="9"><span>9</span></button>
+          <button class="" value="DEL"><span>DEL</span></button>
+          <button class="number" value="4"><span>4</span></button>
+          <button class="number" value="5"><span>5</span></button>
+          <button class="number" value="6"><span>6</span></button>
+          <button class="number" value="+"><span>+</span></button>
+          <button class="number" value="1"><span>1</span></button>
+          <button class="number" value="2"><span></span>2</button>
+          <button class="number" value="3"><span></span>3</button>
+          <button class="number" value="-"><span></span>-</button>
+          <button class="number" value="."><span></span>.</button>
+          <button class="number" value="0"><span></span>0</button>
+          <button class="number" value="/"><span></span>/</button>
+          <button class="number" value="x"><span></span>x</button>
+          <button class="" value="RESET"><span></span>RESET</button>
+          <button class="" value="="><span></span>=</button>
+        </div>
+      </div>
+    </section>
 
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://www.frontendmentor.io/profile/teoh4770" target="_blank"
+        >Chee Kian Teoh</a
+      >.
+    </div> -->
+    <script src="app.js"></script>
+  </body>
 </html>

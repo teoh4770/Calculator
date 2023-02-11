@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+
+:root {
+  --min-width-screen: 600px;
+
+  /*** default theme ***/
+  /** bg **/
+  --main-bg: hsl(222, 26%, 31%);
+  --toggle-bg: hsl(223, 31%, 20%);
+  --keypad-bg: hsl(223, 31%, 20%);
+  --screen-bg: hsl(224, 36%, 15%);
+
+  /** keys **/
+
+  /* color for the numbers */
+  --key-bg: hsl(30, 25%, 89%);
+  --key-shadow: hsl(28, 16%, 65%);
+
+  /* color for the delete and reset*/
+  --key-bg3: hsl(225, 21%, 49%);
+  --key-shadow3: hsl(224, 28%, 35%);
+
+  /* color for the equal and the toggle button */
+  --key-bg2: hsl(6, 63%, 50%);
+  --key-shadow2: hsl(6, 70%, 34%);
+
+  /** text **/
+  --color: hsl(221, 14%, 31%);
+  --color2: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+}
+
+* {
+  margin: 0;
+  /* outline: 1px solid red; */
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--main-bg);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  min-height: 100vh;
+  padding: 2em 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.top-bar {
+  margin-bottom: 2.5rem;
+}
+
+.logo {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.screen {
+  margin-bottom: 2rem;
+}
+
+.result {
+  color: var(--color2);
+  background-color: var(--screen-bg);
+  font-size: 3rem;
+  padding: 1.25rem 1.5rem;
+  text-align: right;
+}
+
+.number-grid {
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+  gap: 0.75rem;
+  background-color: var(--keypad-bg);
+}
+
+.result,
+.number-grid {
+  border-radius: 0.5rem;
+}
+
+button[value="RESET"],
+button[value="="] {
+  grid-column: span 2;
+}
+
+.number-grid > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  color: var(--color2);
+  background-color: var(--key-bg);
+  box-shadow: 0 5px 0px var(--key-shadow);
+}
+
+.number {
+  font-size: 32px;
+  color: var(--color);
+}
+
+button[value="DEL"],
+button[value="RESET"] {
+  background-color: var(--key-bg3);
+  box-shadow: 0 5px 0px var(--key-shadow3);
+}
+
+button[value="="] {
+  background-color: var(--key-bg2);
+  box-shadow: 0 5px 0px var(--key-shadow2);
+}
+
+@media (min-width: 500px) {
+  .number-grid {
+    gap: 1.5em;
+    padding: 1.5em;
+  }
+}
