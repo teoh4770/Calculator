@@ -1,6 +1,6 @@
 # Frontend Mentor - Calculator app solution
 Link here :D : [Calculator](https://teoh4770.github.io/fm-calculator/)
-# took me a day to finish it :)
+...took me a day to finish it :P
 
 This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
