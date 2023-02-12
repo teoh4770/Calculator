@@ -7,16 +7,13 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
-  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -31,15 +28,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
@@ -50,64 +39,168 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
+- HTML
+- CSS Custom Properties for Theme Switching
+- JS, Mostly DOM, and also the logic parts :D
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<h1>Some HTML I'm proud off </h1>
+<div class="wrapper number-grid">
+  <button class="number" value="7">7</button>
+  <button class="number" value="8">8</button>
+  <button class="number" value="9">9</button>
+  <button class="" value="DEL">DEL</button>
+  <button class="number" value="4">4</button>
+  <button class="number" value="5">5</button>
+  <button class="number" value="6">6</button>
+  <button class="number" value="+">+</button>
+  <button class="number" value="1">1</button>
+  <button class="number" value="2">2</button>
+  <button class="number" value="3">3</button>
+  <button class="number" value="-">−</button>
+  <button class="number" value=".">.</button>
+  <button class="number" value="0">0</button>
+  <button class="number" value="/">÷</button>
+  <button class="number" value="*">×</button>
+  <button class="" value="RESET">RESET</button>
+  <button class="" value="=">=</button>
+</div>
+
+<div class="switch-toggle">
+  <p class="title">Theme</p>
+  <div class="wrapper">
+    <div class="numbers">
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+    </div>
+    <div class="radio-wrapper">
+      <input type="radio" name="theme" id="theme1" checked />
+      <label for="theme1"></label>
+      <input type="radio" name="theme" id="theme2" />
+      <label for="theme2"></label>
+      <input type="radio" name="theme" id="theme3" />
+      <label for="theme3"></label>
+    </div>
+  </div>
+</div>
 ```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+:root {
+  --min-width-screen: 600px;
+
+  /*** default theme ***/
+  /** bg **/
+  --main-bg: hsl(0, 0%, 90%);
+  --toggle-bg: hsl(0, 5%, 81%);
+  --keypad-bg: hsl(0, 5%, 81%);
+  --screen-bg: hsl(0, 0%, 93%);
+
+  /** keys **/
+
+  /* third section */
+  /* color for the numbers */
+  --key-bg: hsl(45, 7%, 89%);
+  --key-shadow: hsl(35, 11%, 61%);
+
+  /* second section */
+  /* color for the equal and the toggle button */
+  --key-bg2: hsl(25, 98%, 40%);
+  --key-shadow2: hsl(25, 99%, 27%);
+
+  /* first section - for background 3*/
+  /* color for the delete and reset*/
+  --key-bg3: hsl(185, 42%, 37%);
+  --key-shadow3: hsl(185, 58%, 25%);
+
+  /** text **/
+  --color: hsl(60,10%, 19%);
+  --color2: hsl(0, 0%, 100%);
 }
 ```
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+function checkExpression(expression, userInput) {
+
+  // when str is empty, cannot add operators(besides + and -, indicates positive and negative)
+  if (expression.length == 0) {
+    if (userInput == "*" || userInput == "/") {
+      return;
+    } else {
+      expression += userInput;
+      result.textContent = changeInputLook(userInput);
+    }
+  }
+  else if (expression.length > 0) {
+    // if not operators, then add the number to the expression
+    if (operators.indexOf(userInput) == -1) {
+      
+
+      if(userInput == ".") {
+        if(operators.indexOf(expression[expression.length - 1]) == ".") {
+          expression = expression.slice(0, -1) + userInput;
+          result.textContent = result.textContent.slice(0, -1) + changeInputLook(userInput);
+        }
+        else {
+          if(gotDecimal) {
+            expression += "";
+            result.textContent += "";
+          }
+          else {
+            expression += userInput;
+            result.textContent += changeInputLook(userInput);
+            gotDecimal = true;
+          }
+        }
+      }
+      else {
+        expression += userInput;
+        result.textContent += changeInputLook(userInput);
+      }
+    } 
+
+    // if userinput is operator, then check if last char is an operator, if not, then just add it in
+    else if (operators.indexOf(userInput) != -1) {
+      gotDecimal = false;
+      if(continueEvaluate) {
+        expression = tempNum;
+        continueEvaluate = false;
+      }
+      if (operators.indexOf(expression[expression.length - 1]) != -1) {
+        expression = expression.slice(0, -1) + userInput;
+        result.textContent = expression.slice(0, -1) + changeInputLook(userInput);
+      } 
+      else {
+        expression += userInput;
+        result.textContent += changeInputLook(userInput);
+      }
+    }
+  }
+
+  return expression;
 }
 ```
+Think a lot about what the variables that are suitable for calculator, experiment a lot with Google Calculator, to try to achieve all the little, but nice function it has. One of the examples are when user clicks on the '=' button, and wanna del it, the screen shows the history of the expression.
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+Also, I'm been impressed by how I never discovered the Function() method before, similar to eval() method that are used to evaluate any logic in string, allowed me to get the result of the calculation easily, without needing to reinvent the order of operations rules, create the operations function.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- there are a bit minor bugs that can be fixed. But it is ok for now.
+- maybe use it as a practice for frontend framework like Vue or Angular? 
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [eval() vs Function() in JavaScript](https://www.educative.io/answers/eval-vs-function-in-javascript)
+- Google Calculator as a Sample
+- [Speed Coding|HTML,CSS,JS - Calculator](https://youtu.be/JDiurjhpOXA) <- Give me an idea of how eval works, which help me find the Function() method
 
 ## Author
-
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Frontend Mentor - [@teoh4770]([https://www.frontendmentor.io/profile/teoh4770])
 
 ## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Kevin Powell
