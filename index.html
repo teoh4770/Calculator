@@ -19,30 +19,52 @@
       <div class="container">
         <div class="wrapper top-bar">
           <p class="logo">calc</p>
+
+          <div class="switch-toggle">
+            <p class="title">Theme</p>
+            <div class="wrapper">
+              <div class="numbers">
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+              </div>
+              <div class="radio-wrapper">
+                <input type="radio" name="theme" id="theme1" checked />
+                <label for="theme1"></label>
+                <input type="radio" name="theme" id="theme2" />
+                <label for="theme2"></label>
+                <input type="radio" name="theme" id="theme3" />
+                <label for="theme3"></label>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="wrapper screen">
-          <p class="result">1234</p>
+          <p class="result">
+            <span id="js-result">0</span>
+            <span id="js-temp-result"></span>
+          </p>
         </div>
         <div class="wrapper number-grid">
-          <button class="number" value="7"><span>7</span></button>
-          <button class="number" value="8"><span>8</span></button>
-          <button class="number" value="9"><span>9</span></button>
-          <button class="" value="DEL"><span>DEL</span></button>
-          <button class="number" value="4"><span>4</span></button>
-          <button class="number" value="5"><span>5</span></button>
-          <button class="number" value="6"><span>6</span></button>
-          <button class="number" value="+"><span>+</span></button>
-          <button class="number" value="1"><span>1</span></button>
-          <button class="number" value="2"><span></span>2</button>
-          <button class="number" value="3"><span></span>3</button>
-          <button class="number" value="-"><span></span>-</button>
-          <button class="number" value="."><span></span>.</button>
-          <button class="number" value="0"><span></span>0</button>
-          <button class="number" value="/"><span></span>/</button>
-          <button class="number" value="x"><span></span>x</button>
-          <button class="" value="RESET"><span></span>RESET</button>
-          <button class="" value="="><span></span>=</button>
+          <button class="number" value="7">7</button>
+          <button class="number" value="8">8</button>
+          <button class="number" value="9">9</button>
+          <button class="" value="DEL">DEL</button>
+          <button class="number" value="4">4</button>
+          <button class="number" value="5">5</button>
+          <button class="number" value="6">6</button>
+          <button class="number" value="+">+</button>
+          <button class="number" value="1">1</button>
+          <button class="number" value="2">2</button>
+          <button class="number" value="3">3</button>
+          <button class="number" value="-">−</button>
+          <button class="number" value=".">.</button>
+          <button class="number" value="0">0</button>
+          <button class="number" value="/">÷</button>
+          <button class="number" value="*">×</button>
+          <button class="" value="RESET">RESET</button>
+          <button class="" value="=">=</button>
         </div>
       </div>
     </section>

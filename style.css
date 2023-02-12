@@ -5,27 +5,30 @@
 
   /*** default theme ***/
   /** bg **/
-  --main-bg: hsl(222, 26%, 31%);
-  --toggle-bg: hsl(223, 31%, 20%);
-  --keypad-bg: hsl(223, 31%, 20%);
-  --screen-bg: hsl(224, 36%, 15%);
+  --main-bg: hsl(0, 0%, 90%);
+  --toggle-bg: hsl(0, 5%, 81%);
+  --keypad-bg: hsl(0, 5%, 81%);
+  --screen-bg: hsl(0, 0%, 93%);
 
   /** keys **/
 
+  /* third section */
   /* color for the numbers */
-  --key-bg: hsl(30, 25%, 89%);
-  --key-shadow: hsl(28, 16%, 65%);
+  --key-bg: hsl(45, 7%, 89%);
+  --key-shadow: hsl(35, 11%, 61%);
 
-  /* color for the delete and reset*/
-  --key-bg3: hsl(225, 21%, 49%);
-  --key-shadow3: hsl(224, 28%, 35%);
-
+  /* second section */
   /* color for the equal and the toggle button */
-  --key-bg2: hsl(6, 63%, 50%);
-  --key-shadow2: hsl(6, 70%, 34%);
+  --key-bg2: hsl(25, 98%, 40%);
+  --key-shadow2: hsl(25, 99%, 27%);
+
+  /* first section - for background 3*/
+  /* color for the delete and reset*/
+  --key-bg3: hsl(185, 42%, 37%);
+  --key-shadow3: hsl(185, 58%, 25%);
 
   /** text **/
-  --color: hsl(221, 14%, 31%);
+  --color: hsl(60,10%, 19%);
   --color2: hsl(0, 0%, 100%);
 }
 
@@ -39,7 +42,6 @@
 
 * {
   margin: 0;
-  /* outline: 1px solid red; */
 }
 
 html,
@@ -52,6 +54,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   background-color: var(--main-bg);
+  color: white;
 }
 
 img,
@@ -82,7 +85,6 @@ h6 {
 
 body {
   min-height: 100vh;
-  padding: 2em 1.5em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,20 +92,82 @@ body {
 
 .calculator {
   width: 100%;
+  height: 100%;
 }
 
 .container {
-  margin: 0 auto;
+  margin: 30px auto;
+  padding: 1em;
   max-width: 500px;
 }
 
 .top-bar {
   margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
-  color: white;
   font-size: 2.5rem;
+  transform: translateY(12.5px);
+}
+
+.switch-toggle,
+.logo {
+  color: var(--color);
+}
+
+.switch-toggle {
+  display: flex;
+  align-items: end;
+}
+
+.switch-toggle .wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 125px;
+  margin-left: 1.5em;
+}
+
+.switch-toggle .wrapper .numbers > *,
+.radio-wrapper input {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.switch-toggle .wrapper .numbers,
+.radio-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.radio-wrapper {
+  border-radius: 2rem;
+  background-color: var(--toggle-bg);
+  padding: 0.5em 0;
+}
+
+.radio-wrapper input {
+  appearance: none;
+  display: none;
+}
+
+.radio-wrapper label {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition: background-color 0.1s ease-in;
+  transform: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.radio-wrapper input:checked + label {
+  background-color: var(--key-bg2);
 }
 
 .screen {
@@ -111,11 +175,27 @@ body {
 }
 
 .result {
-  color: var(--color2);
+  color: var(--color);
   background-color: var(--screen-bg);
   font-size: 3rem;
   padding: 1.25rem 1.5rem;
   text-align: right;
+}
+
+.result span {
+  display: block;
+}
+
+.result span:nth-child(1) {
+  height: 72px;
+  overflow-x: auto;
+  
+}
+
+.result span:nth-child(2) {
+  font-size: 1.5rem;
+  height: 36px;
+  filter: brightness(0.8);
 }
 
 .number-grid {
@@ -147,7 +227,16 @@ button[value="="] {
   font-size: 1.25rem;
   color: var(--color2);
   background-color: var(--key-bg);
-  box-shadow: 0 5px 0px var(--key-shadow);
+  box-shadow: 0 3px 0px var(--key-shadow);
+}
+
+.number-grid > *:hover,
+.radio-wrapper label:hover {
+  filter: brightness(1.1);
+}
+
+.number-grid > *:active {
+  box-shadow: none;
 }
 
 .number {
@@ -165,6 +254,8 @@ button[value="="] {
   background-color: var(--key-bg2);
   box-shadow: 0 5px 0px var(--key-shadow2);
 }
+
+
 
 @media (min-width: 500px) {
   .number-grid {
