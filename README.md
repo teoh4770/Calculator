@@ -1,4 +1,6 @@
 # Frontend Mentor - Calculator app solution
+Link here :D : [Calculator](https://teoh4770.github.io/fm-calculator/)
+# took me a day to finish it :)
 
 This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
@@ -27,8 +29,12 @@ Users should be able to:
 - **Bonus**: Have their initial theme preference checked using `prefers-color-scheme` and have any additional changes saved in the browser
 
 ### Screenshot
-
-
+Still Got issue here :D
+![Still Got issue here lol](https://user-images.githubusercontent.com/98545971/218294915-0f0ad380-ebe5-402a-8217-17ce6f7c4a05.png)
+![mobile1](https://user-images.githubusercontent.com/98545971/218294813-c87a7ec4-baa3-4654-a404-b8fe412d6177.png)
+![mobile2](https://user-images.githubusercontent.com/98545971/218294819-b69a9f09-9fac-4528-8527-fc558bdb49cf.png)
+![mobile3](https://user-images.githubusercontent.com/98545971/218294831-a12a3bba-77bd-435e-b248-78071323e0d0.png)
+![desktop](https://user-images.githubusercontent.com/98545971/218294877-592264f9-909b-48ad-95b1-9b5790a983a7.png)
 
 ### Links
 
