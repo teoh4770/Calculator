@@ -2,7 +2,10 @@
 
 :root {
   --min-width-screen: 600px;
+}
 
+/* themes */
+html.theme1 {
   /*** default theme ***/
   /** bg **/
   --main-bg: hsl(0, 0%, 90%);
@@ -29,6 +32,40 @@
 
   /** text **/
   --color: hsl(60,10%, 19%);
+  --color2: hsl(0, 0%, 100%);
+}
+
+html.theme2 {
+  --main-bg: hsl(222, 26%, 31%);
+  --toggle-bg: hsl(223, 31%, 20%);
+  --keypad-bg: hsl(223, 31%, 20%);
+  --screen-bg: hsl(224, 36%, 15%);
+
+  --key-bg: hsl(30, 25%, 89%);
+  --key-shadow: hsl(28, 16%, 65%);
+  --key-bg2: hsl(6, 63%, 50%);
+  --key-shadow2: hsl(6, 70%, 34%);
+  --key-bg3: hsl(225, 21%, 49%);
+  --key-shadow3: hsl(224, 28%, 35%);
+
+  --color: hsl(221, 14%, 31%);
+  --color2: hsl(0, 0%, 100%);
+}
+
+html.theme3 {
+  --main-bg: hsl(268, 75%, 9%);
+  --toggle-bg: hsl(268, 71%, 12%);
+  --keypad-bg: hsl(268, 71%, 12%);
+  --screen-bg: hsl(268, 71%, 12%);
+
+  --key-bg: hsl(268, 47%, 21%);
+  --key-shadow: hsl(290, 70%, 36%);
+  --key-bg2: hsl(176, 100%, 44%);
+  --key-shadow2: hsl(177, 92%, 70%);
+  --key-bg3: hsl(281, 89%, 26%);
+  --key-shadow3: hsl(285, 91%, 52%);
+
+  --color: hsl(52, 100%, 62%);
   --color2: hsl(0, 0%, 100%);
 }
 

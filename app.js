@@ -219,81 +219,29 @@ function evaluate() {
   tempExpression = result.textContent;
   result.textContent = tempResult.textContent;
   tempResult.textContent = "";
-
-  console.log(`tempExpression: ${tempExpression}`);
-  console.log(`result content: ${result.textContent}`);
-
-  
 }
 
 function changeThemes(theme) {
-  let style = document.documentElement.style;
   switch(theme) {
     case "theme1":
-      style.setProperty("--main-bg", "hsl(0, 0%, 90%)");
-      style.setProperty("--toggle-bg", "hsl(0, 5%, 81%)");
-      style.setProperty("--keypad-bg", "hsl(0, 5%, 81%)");
-      style.setProperty("--screen-bg", "hsl(0, 0%, 93%)");
-
-      style.setProperty("--key-bg", "hsl(45, 7%, 89%);");
-      style.setProperty("--key-shadow", " hsl(35, 11%, 61%)");
-
-      style.setProperty("--key-bg2", "hsl(25, 98%, 40%)");
-      style.setProperty("--key-shadow2", "hsl(25, 99%, 27%)");
-
-      style.setProperty("--key-bg3", "hsl(185, 42%, 37%)");
-      style.setProperty("--key-shadow3", "hsl(185, 58%, 25%)");
-      
-      style.setProperty("--color", "hsl(60,10%, 19%)");
-      style.setProperty("--color2", "hsl(0, 0%, 100%)");
-
+      document.documentElement.className = "theme1";
       [title, ...themeNums, logo, result].forEach(el => {
-        el.style.color = "var(--color1)";
-      })
+        el.style.color = "var(--color)";
+      });
       break;
 
     case "theme2":
-      style.setProperty("--main-bg", "hsl(222, 26%, 31%)");
-      style.setProperty("--toggle-bg", "hsl(223, 31%, 20%)");
-      style.setProperty("--keypad-bg", "hsl(223, 31%, 20%)");
-      style.setProperty("--screen-bg", "hsl(224, 36%, 15%)");
-
-      style.setProperty("--key-bg", "hsl(30, 25%, 89%)");
-      style.setProperty("--key-shadow", "hsl(28, 16%, 65%)");
-      style.setProperty("--key-bg2", "hsl(6, 63%, 50%)");
-      style.setProperty("--key-shadow2", "hsl(6, 70%, 34%)");
-      style.setProperty("--key-bg3", "hsl(225, 21%, 49%)");
-      style.setProperty("--key-shadow3", "hsl(224, 28%, 35%)");
-
-      style.setProperty("--color", "hsl(221, 14%, 31%)");
-      style.setProperty("--color2", "hsl(0, 0%, 100%)");
-      
+      document.documentElement.className = "theme2";
       [title, ...themeNums, logo, result].forEach(el => {
         el.style.color = "var(--color2)";
       });
       break;
 
     case "theme3":
-      style.setProperty("--main-bg", "hsl(268, 75%, 9%)");
-      style.setProperty("--toggle-bg", "hsl(268, 71%, 12%)");
-      style.setProperty("--keypad-bg", "hsl(268, 71%, 12%)");
-      style.setProperty("--screen-bg", "hsl(268, 71%, 12%)");
-
-      style.setProperty("--key-bg", "hsl(268, 47%, 21%)");
-      style.setProperty("--key-shadow", "hsl(290, 70%, 36%)");
-      style.setProperty("--key-bg2", "hsl(176, 100%, 44%)");
-      style.setProperty("--key-shadow2", "hsl(177, 92%, 70%)");
-      style.setProperty("--key-bg3", "hsl(281, 89%, 26%)");
-      style.setProperty("--key-shadow3", "hsl(285, 91%, 52%)");
-
-      style.setProperty("--color", "hsl(52, 100%, 62%)");
-      style.setProperty("--color2", "white");
-
+      document.documentElement.className = "theme3";
       [title, ...themeNums, logo].forEach(el => {
         el.style.color = "var(--color)";
       });
-
-
       break;
   }
 }

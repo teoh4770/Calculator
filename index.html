@@ -1,75 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
+<html lang="en" class="theme1">
 
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Frontend Mentor | Calculator app</title>
-  </head>
-  <body>
-    <section class="calculator">
-      <div class="container">
-        <div class="wrapper top-bar">
-          <p class="logo">calc</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
 
-          <div class="switch-toggle">
-            <p class="title">Theme</p>
-            <div class="wrapper">
-              <div class="numbers">
-                <span>1</span>
-                <span>2</span>
-                <span>3</span>
-              </div>
-              <div class="radio-wrapper">
-                <input type="radio" name="theme" id="theme1" checked />
-                <label for="theme1"></label>
-                <input type="radio" name="theme" id="theme2" />
-                <label for="theme2"></label>
-                <input type="radio" name="theme" id="theme3" />
-                <label for="theme3"></label>
-              </div>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Frontend Mentor | Calculator app</title>
+</head>
+
+<body>
+  <section class="calculator">
+    <div class="container">
+      <div class="wrapper top-bar">
+        <p class="logo">calc</p>
+
+        <div class="switch-toggle">
+          <p class="title">Theme</p>
+          <div class="wrapper">
+            <div class="numbers">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+            </div>
+            <div class="radio-wrapper">
+              <input type="radio" name="theme" id="theme1" checked />
+              <label for="theme1"></label>
+              <input type="radio" name="theme" id="theme2" />
+              <label for="theme2"></label>
+              <input type="radio" name="theme" id="theme3" />
+              <label for="theme3"></label>
             </div>
           </div>
         </div>
-
-        <div class="wrapper screen">
-          <p class="result">
-            <span id="js-result">0</span>
-            <span id="js-temp-result"></span>
-          </p>
-        </div>
-        <div class="wrapper number-grid">
-          <button class="number" value="7">7</button>
-          <button class="number" value="8">8</button>
-          <button class="number" value="9">9</button>
-          <button class="" value="DEL">DEL</button>
-          <button class="number" value="4">4</button>
-          <button class="number" value="5">5</button>
-          <button class="number" value="6">6</button>
-          <button class="number" value="+">+</button>
-          <button class="number" value="1">1</button>
-          <button class="number" value="2">2</button>
-          <button class="number" value="3">3</button>
-          <button class="number" value="-">−</button>
-          <button class="number" value=".">.</button>
-          <button class="number" value="0">0</button>
-          <button class="number" value="/">÷</button>
-          <button class="number" value="*">×</button>
-          <button class="" value="RESET">RESET</button>
-          <button class="" value="=">=</button>
-        </div>
       </div>
-    </section>
 
-    <!-- <div class="attribution">
+      <div class="wrapper screen">
+        <p class="result">
+          <span id="js-result">0</span>
+          <span id="js-temp-result"></span>
+        </p>
+      </div>
+      <div class="wrapper number-grid">
+        <button class="number" value="7">7</button>
+        <button class="number" value="8">8</button>
+        <button class="number" value="9">9</button>
+        <button class="" value="DEL">DEL</button>
+        <button class="number" value="4">4</button>
+        <button class="number" value="5">5</button>
+        <button class="number" value="6">6</button>
+        <button class="number" value="+">+</button>
+        <button class="number" value="1">1</button>
+        <button class="number" value="2">2</button>
+        <button class="number" value="3">3</button>
+        <button class="number" value="-">−</button>
+        <button class="number" value=".">.</button>
+        <button class="number" value="0">0</button>
+        <button class="number" value="/">÷</button>
+        <button class="number" value="*">×</button>
+        <button class="" value="RESET">RESET</button>
+        <button class="" value="=">=</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
@@ -78,6 +75,7 @@
         >Chee Kian Teoh</a
       >.
     </div> -->
-    <script src="app.js"></script>
-  </body>
+  <script src="app.js"></script>
+</body>
+
 </html>
